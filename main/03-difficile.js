@@ -23,7 +23,8 @@
 }
 
 /**
- * Ce log ne fait pas partie de l'exercice, ne vous en préoccupez donc pas, mais il vous aidera à afficher vos tests avec un joli formattage.
+ * Ce log ne fait pas partie de l'exercice, ne vous en préoccupez donc pas, mais il vous aidera à afficher 
+ * vos tests avec un joli formattage.
  */
  console.log(`Les movements d'un fou sont : ${mouvementsFou(4, 4).map(cell => `[${cell}]`)}`)
 

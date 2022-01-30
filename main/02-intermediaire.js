@@ -2,10 +2,21 @@
  * Programmer une fonction prenant en argument 2 tableaux et qui renvoie un tableau contenant leurs valeurs alternées.
  * 
  * Exemple : [1, 2, 3] et ["apple", "orange", "banana"] renverra : [1, "apple", 2, "orange", 3, "banana"]
- */
-function combine(tableau1, tableau2) {
+*/
+let tableau_nombres=[1, 2, 3];
+let tableau_fruits=["apple", "orange", "banana"];
 
+console.log(combine(tableau_nombres, tableau_fruits));
+
+function combine(tableau1, tableau2) {
+    let tableau_result=[];
+    for (let i = 0; i < tableau1.length; i++){
+        tableau_result.push(tableau1[i]);
+        tableau_result.push(tableau2[i]);
+    }
+    return tableau_result;
 }
+
 
 /**
  * Programmer une fonction prenant en argument un tableau d'éléments et une valeur offset, et qui renvoie un tableau avec les valeurs du tableau en argument décalées de la valeur

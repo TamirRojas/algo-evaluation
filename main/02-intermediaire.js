@@ -67,13 +67,18 @@ function rotate(tableau, offset) {
  * Pour 1, la suite sera : [1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
  */
  
+ let ma_syracuse = 3;
+ 
+console.log("nombre sujet à la suite de syracuse:"+ma_syracuse)
+console.log("suite limitée à 10:"+syracuse(ma_syracuse))
  function syracuse(nombre) {
-    let array = [];
-    if (nombre % 2 === 0){
-        array.push(nombre/2)
+    let array = [nombre];
+    for(let i=0; i<9; i++)
+    if ((array[i] % 2 === 0)==true){
+        array.push((array[i])/2)
+        }
+    else{ 
+        array.push((array[i]*3)+1)
     }
-    else{
-        array.push((nombre*3)+1)
-    }
-    syracuse()
+    return array
 }

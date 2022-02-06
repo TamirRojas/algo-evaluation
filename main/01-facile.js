@@ -4,16 +4,21 @@
  * - "NEGATIVE" s'il est de signe négatif
  * - "NUL" s'il est nul
  */
+ console.log("Exo 1")
+ console.log("Le signe du nombre est:"+ signe(2))
+
 function signe(nombre){
     if(nombre > 0){
-        return "POSITIVE";
+        return "POSITIVE"
     } else if (nombre < 0){
-        return "NEGATIVE";
+        return "NEGATIVE"
     } else {
-        return "NUL";
+        return "NUL"
     }
 }
 /* DEUXIÈME FUNCTION - UTILISATION DE Math.sign FUNCTION */ 
+
+console.log("Le signe du nombre dans la 2ème function est:"+ signe_2(-2))
 
 function signe_2(nombre_2) {
     if (Math.sign(nombre_2)===1) {
@@ -24,11 +29,6 @@ function signe_2(nombre_2) {
         return "NUL"
     }
 }
-console.log("Exo 1")
-console.log(signe(1))
-console.log(signe_2(-2))
-
-
 /**
  * Programmer une fonction prenant en argument un tableau de nombres, et qui renvoie un tableau ne contenant que les nombres pairs.
  * Astuce : un nombre pair est un nombre dont le reste de la division par 2 est 0.

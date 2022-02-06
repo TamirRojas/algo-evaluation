@@ -13,8 +13,33 @@
  * 
  * L'implémentation déjà faite est bien sûr fausse mais définit un format de réponse qui est correct. Il s'agira bien 
  * de renvoyer un tableau de tableau, c'est à dire un tableau qui contiendra de petits tableaux qui sont les paires ligne-colonne.
- * 
  */
+ let origenX = 3;
+ let origenY = 4;
+ let resultat = [];
+ let i;
+ let j=origenY;
+
+ // x négatif y positif 
+ for (i=origenX, j=origenY; i>1 && j<8 ; i--, j++){
+    resultat.push([i-1,j+1]);
+} 
+
+ // x positif y négatif 
+ for (i=origenX, j=origenY; i<8 && j>1 ; i++, j--){
+    resultat.push([i+1,j-1]);
+} 
+
+ // x positif y positif 
+ for (i=origenX, j=origenY; i<8 && j<8 ; i++, j++){
+    resultat.push([i+1,j+1]);
+}
+ // x négatif y négatif 
+ for (i=origenX, j=origenY; i>1 && j>1 ; i--, j--){
+    resultat.push([i-1,j-1]);
+}
+console.log(resultat)
+
  function mouvementsFou(ligne, colonne) {
     return [
         [ligne - 1, colonne - 1],
@@ -26,11 +51,9 @@
 /**
  * Ce log ne fait pas partie de l'exercice, ne vous en préoccupez donc pas, mais il vous aidera à afficher 
  * vos tests avec un joli formattage.
- */
- console.log(`Les movements d'un fou sont : ${mouvementsFou(4, 4).map(cell => `[${cell}]`)}`)
-
-
-
+ *
+ 
+console.log(`Les movements d'un fou sont : ${mouvementsFou(4, 4).map(cell => `[${cell}]`)}`)  */
 
 
 
@@ -54,4 +77,4 @@ function pyramide(hauteur) {
     return ["    *    ", "   ***   ", "  *****  ", " ******* ", "*********"]
 }
 
-pyramide(5).forEach(e => console.log(`${e}`))
+// pyramide(5).forEach(e => console.log(`${e}`)) 

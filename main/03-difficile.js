@@ -14,67 +14,102 @@
  * L'implémentation déjà faite est bien sûr fausse mais définit un format de réponse qui est correct. Il s'agira bien 
  * de renvoyer un tableau de tableau, c'est à dire un tableau qui contiendra de petits tableaux qui sont les paires ligne-colonne.
  */
- let origenX = 3;
- let origenY = 4;
- let resultat = [];
- let i;
- let j=origenY;
+  
 
- // x négatif y positif 
- for (i=origenX, j=origenY; i>1 && j<8 ; i--, j++){
-    resultat.push([i-1,j+1]);
-} 
+console.log(`Les movements d'un fou sont : ${mouvementsFou(3,3).map(cell => `[${cell}]`)}`)
 
- // x positif y négatif 
- for (i=origenX, j=origenY; i<8 && j>1 ; i++, j--){
-    resultat.push([i+1,j-1]);
-} 
+function mouvementsFou(ligne, colonne) {
+    //déclaration des index
+    let i;
+    let j;
 
- // x positif y positif 
- for (i=origenX, j=origenY; i<8 && j<8 ; i++, j++){
-    resultat.push([i+1,j+1]);
+    let resultat = [];
+
+    // mouvements direction : x négatif, y positif 
+    for (i=ligne, j=colonne; i>1 && j<8 ; i--, j++){
+        resultat.push([i-1,j+1]);
+    } 
+
+    // mouvements direction : x positif, y négatif 
+    for (i=ligne, j=colonne; i<8 && j>1 ; i++, j--){
+        resultat.push([i+1,j-1]);
+    } 
+
+    // mouvements direction : x positif, y positif 
+    for (i=ligne, j=colonne; i<8 && j<8 ; i++, j++){
+        resultat.push([i+1,j+1]);
+    }
+    // mouvements direction : x négatif, y négatif 
+    for (i=ligne, j=colonne; i>1 && j>1 ; i--, j--){
+        resultat.push([i-1,j-1]);
+    }
+    return resultat;
 }
- // x négatif y négatif 
- for (i=origenX, j=origenY; i>1 && j>1 ; i--, j--){
-    resultat.push([i-1,j-1]);
-}
-console.log(resultat)
 
- function mouvementsFou(ligne, colonne) {
-    return [
-        [ligne - 1, colonne - 1],
-        [ligne, colonne],
-        [ligne + 1, colonne + 1],
-    ]
-}
 
 /**
  * Ce log ne fait pas partie de l'exercice, ne vous en préoccupez donc pas, mais il vous aidera à afficher 
  * vos tests avec un joli formattage.
  *
  
-console.log(`Les movements d'un fou sont : ${mouvementsFou(4, 4).map(cell => `[${cell}]`)}`)  */
 
 
 
 /**
- * Programmer une fonction qui prend en paramètre un nombre, correspondant à la hauteur d'une pyramide et qui renvoie un tableau de caractères "*" et espace afin de construire
- * une pyramide avec la hauteur en argument.
+ * Programmer une fonction qui prend en paramètre un nombre, correspondant à la hauteur d'une pyramide et qui renvoie un tableau de caractères "*" et espace
+ * afin de construire une pyramide avec la hauteur en argument.
  * 
  * Exemple, pour une hauteur de 5 : ["    *    ", "   ***   ", "  *****  ", " ******* ", "*********"]
  * 
  * Comme pour l'exercice précédent, vous ne devriez pas toucher au log, mais il vous servira à contrôler votre résultat.
  * Pour l'exemple précédent, il vous affichera :
  * 
- *     *    
+ *     * 1---2x1 -1 = 1 (total de estrellas) ---- total de estrellas de la base 9 = 8 espacios vacios  
  *    ***   
  *   *****  
  *  ******* 
  * *********
  * 
+ * return ["    *    ", "   ***   ", "  *****  ", " ******* ", "*********"]
  */
-function pyramide(hauteur) {
-    return ["    *    ", "   ***   ", "  *****  ", " ******* ", "*********"]
-}
 
-// pyramide(5).forEach(e => console.log(`${e}`)) 
+ pyramide(3).forEach(result => console.log(`${result}`));
+
+function pyramide(hauteur) {
+    let result = [];
+    let string_length = (2*hauteur)-1;
+   
+    // parcourir les etages
+    for (let i = 1; i <= hauteur; i++) {
+                
+        let stars_by_floor = stars(i);
+        let blank_space_by_floor = (string_length-stars_by_floor)/2;
+        let word = "";
+
+        //boucle pour les premiers espace en blanc
+        for (let j=0; j<blank_space_by_floor; j++){
+            //concaténation 
+            word += " ";
+        }
+
+        //boucle pour les etoiles
+        for (let k=0; k<stars_by_floor; k++){
+            //concaténation 
+            word += "*";
+        }
+        
+        //boucle pour les espaces en blanc
+        for (let l=0; l<blank_space_by_floor; l++){
+            //concaténation 
+            word += " ";
+        }
+        result.push(word);
+    }
+return result;
+} 
+
+
+//fonction qui retourne le nombre de etoile par rapport a l'etage actuel
+function stars(floor){
+    return (2*floor)-1;
+} 

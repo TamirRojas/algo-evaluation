@@ -7,7 +7,7 @@
  console.log("Exo 1")
  console.log("Le signe du nombre est:"+ signe(2))
 
-function signe(nombre){
+ function signe(nombre){
     if(nombre > 0){
         return "POSITIVE"
     } else if (nombre < 0){
@@ -15,12 +15,12 @@ function signe(nombre){
     } else {
         return "NUL"
     }
-}
-/* DEUXIÈME FUNCTION - UTILISATION DE Math.sign FUNCTION */ 
+ }
+ /* DEUXIÈME FUNCTION - UTILISATION DE Math.sign FUNCTION */ 
 
-console.log("Le signe du nombre dans la 2ème function est:"+ signe_2(-2))
+ console.log("Le signe du nombre dans la 2ème function est:" + signe_2(-2))
 
-function signe_2(nombre_2) {
+ function signe_2(nombre_2) {
     if (Math.sign(nombre_2)===1) {
         return "POSITIVE";
     } else if (Math.sign(nombre_2)===-1) {
@@ -28,17 +28,17 @@ function signe_2(nombre_2) {
     } else {
         return "NUL"
     }
-}
-/**
+ }
+ /**
  * Programmer une fonction prenant en argument un tableau de nombres, et qui renvoie un tableau ne contenant que les nombres pairs.
  * Astuce : un nombre pair est un nombre dont le reste de la division par 2 est 0.
  */
 
-//initialization de variables
+ //initialization de variables
  let nombres=[];
  let result=[];
 
-// tableau de 25 elements 
+ // tableau de 25 elements 
  for (let i=1; i<=25;i++){
     nombres.push([i])
  }
@@ -48,11 +48,11 @@ function signe_2(nombre_2) {
         // Création tableau resultat
         result.push(nombres[i])
     }
-}
-console.log()
-console.log("Exo 2")
-console.log("Tableau Input:" +nombres)
-console.log("Tableau nombres pairs:"+result)
+ }
+ console.log()
+ console.log("Exo 2")
+ console.log("Tableau Input:" + nombres)
+ console.log("Tableau nombres pairs:" + result)
 
  // vérifier si le nombre est pair ou non 
  function nombresPairs(x){

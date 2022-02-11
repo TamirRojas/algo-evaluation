@@ -6,6 +6,7 @@
 let tableau_nombres=[1, 2, 3];
 let tableau_fruits=["apple", "orange", "banana"];
 
+console.log("Exo nº1 intermediaire")
 console.log(combine(tableau_nombres, tableau_fruits));
 
 function combine(tableau1, tableau2) {
@@ -23,24 +24,25 @@ function combine(tableau1, tableau2) {
  * et qui renvoie un tableau avec les valeurs du tableau en argument décalées de la valeur de offset.
  * Par exemple : rotate([1, 2, 3, 4, 5], 2) renverra [4, 5, 1, 2, 3] 
  */
-let tableau_elements=[];
-// 
-for (let i=1;i<=5; i++) {
+ let tableau_elements=[];
+ // 
+ for (let i=1;i<=5; i++) {
     tableau_elements.push([i])
-}
+ }
 
-console.log("Exo nº2 intermediaire")
-console.log("tableau initial: "+tableau_elements)
+ console.log(" ")
+ console.log("Exo nº2 intermediaire")
+ console.log("Tableau initial: " + tableau_elements)
 
-console.log("resultat: "+rotate(tableau_elements,2))
+ console.log("Resultat: " + rotate(tableau_elements,2))
 
-function rotate(tableau, offset) {  
+ function rotate(tableau, offset) {  
     let tableau_result=[]; 
     let n = tableau.length;
     let limite = n-offset;
     let i = 0;
     if(offset>n){
-        return("offset invalide");
+        return("OFFSET INVALIDE");
     }
     else {
         for (i = limite; i < n; i++) {
@@ -51,9 +53,9 @@ function rotate(tableau, offset) {
         }
         return tableau_result;
     }
-}
+ }
 
-/**
+ /**
  * Suite de Syracuse
  * 
  * La suite de Syracuse est une suite de nombre (nous avions vu la suite de Fibonacci en cours), calculée en prenant 
@@ -68,9 +70,10 @@ function rotate(tableau, offset) {
  */
  
  let ma_syracuse = 3;
- 
-console.log("nombre sujet à la suite de syracuse:"+ma_syracuse)
-console.log("suite limitée à 10:"+syracuse(ma_syracuse))
+ console.log(" ")
+ console.log("Exo nº3 intermediaire")
+ console.log("Nombre sujet à la suite de syracuse:" + ma_syracuse)
+ console.log("Suite limitée à 10:" + syracuse(ma_syracuse))
  function syracuse(nombre) {
     let array = [nombre];
     for(let i=0; i<9; i++)
@@ -81,4 +84,4 @@ console.log("suite limitée à 10:"+syracuse(ma_syracuse))
         array.push((array[i]*3)+1)
     }
     return array
-}
+ }

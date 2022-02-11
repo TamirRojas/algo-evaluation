@@ -14,11 +14,11 @@
  * L'implémentation déjà faite est bien sûr fausse mais définit un format de réponse qui est correct. Il s'agira bien 
  * de renvoyer un tableau de tableau, c'est à dire un tableau qui contiendra de petits tableaux qui sont les paires ligne-colonne.
  */
-  
+ console.log(" ")  
+ console.log("Exo nº1 mouvements du fou")
+ console.log(`Les movements d'un fou sont : ${mouvementsFou(3,3).map(cell => `[${cell}]`)}`)
 
-console.log(`Les movements d'un fou sont : ${mouvementsFou(3,3).map(cell => `[${cell}]`)}`)
-
-function mouvementsFou(ligne, colonne) {
+ function mouvementsFou(ligne, colonne) {
     //déclaration des index
     let i;
     let j;
@@ -72,10 +72,12 @@ function mouvementsFou(ligne, colonne) {
  * 
  * return ["    *    ", "   ***   ", "  *****  ", " ******* ", "*********"]
  */
-
+ console.log(" ")
+ console.log("Exo nº2 Pyramide")
+ console.log(" ")
  pyramide(3).forEach(result => console.log(`${result}`));
 
-function pyramide(hauteur) {
+ function pyramide(hauteur) {
     let result = [];
     let string_length = (2*hauteur)-1;
    
@@ -105,11 +107,11 @@ function pyramide(hauteur) {
         }
         result.push(word);
     }
-return result;
-} 
+ return result;
+ } 
 
 
-//fonction qui retourne le nombre de etoile par rapport a l'etage actuel
-function stars(floor){
+ //fonction qui retourne le nombre de etoile par rapport a l'etage actuel
+ function stars(floor){
     return (2*floor)-1;
 } 

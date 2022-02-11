@@ -82,3 +82,4 @@ console.log("suite limitée à 10:"+syracuse(ma_syracuse))
     }
     return array
 }
+console.log("test")
